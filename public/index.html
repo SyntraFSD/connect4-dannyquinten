@@ -5,39 +5,53 @@
     <meta charset="utf-8">
 
     <title>The HTML5 Herald</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/index.css?v=1.0">
 
 </head>
 
 <body>
 <header class="Header">
-    <div class="Header-left">
-        <a href="#" class="Header-linkimg">
-            <img src="content/img/logo-new.png" width="50" alt="logo">
+    <a href="/" class="Header-logo">
+        <img src="content/img/logo-new.png" alt="logo" width="50" height="50">
+    </a>
+    <a href="/" class="Header-title">
+        Connect 4
+    </a>
+    <nav class="Header-links--desktop">
+        <a class="Header-links--desktop-link" href="stats.html">
+            Stats
         </a>
-    </div>
-    <div class="Header-middle">
-        <a class="Header-link" href="#">Connect 4</a>
-    </div>
-    <div class="Header-right">
-        <a class="Header-link" href="#">Login</a>
-        <a class="Header-link" href="#">Stats</a>
-    </div>
+        <a class="Header-links--desktop-link" href="login.html">
+            Login
+        </a>
+    </nav>
+    <nav class="Header-links--mobile">
+        <a class="Header-links--mobile-hamburger">
+            <div>
+            </div>
+        </a>
+        <div class="Header-links--mobile-dropdown inactive">
+            <a class="Header-links--mobile-dropdown-link" href="stats.html">
+                Stats
+            </a>
+            <a class="Header-links--mobile-dropdown-link" href="login.html">
+                Login
+            </a>
+        </div>
+    </nav>
 </header>
 <main>
-    <section class="super-slider ss-container">
-        <img src="https://loremflickr.com/g/1000/500/pixies,band,concert/all?random=1" alt="">
-        <img src="https://loremflickr.com/g/1000/500/pixies,band,concert/all?random=2" alt="">
-        <img src="https://loremflickr.com/g/1000/500/pixies,band,concert/all?random=3" alt="">
-        <img src="https://loremflickr.com/g/1000/500/pixies,band,concert/all?random=4" alt="">
-        <img src="https://loremflickr.com/g/1000/500/pixies,band,concert/all?random=5" alt="">
-    </section>
-
+    <div class="Slider">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequuntur cupiditate est facere nemo perferendis quod quos similique veniam voluptatem? Delectus est mollitia officia, praesentium ratione repellendus sed tempore! Ab, debitis ducimus eaque excepturi expedita iusto, numquam placeat quam quasi quos ratione soluta sunt totam veniam, voluptatibus. Adipisci et itaque obcaecati repudiandae voluptas. Aliquam aperiam atque cum dolor facere, facilis fuga ipsum labore magni nobis obcaecati reiciendis unde vel! At delectus ea eius fugit illum itaque non pariatur quae qui. Dolores eos ex incidunt molestiae nostrum pariatur recusandae rerum voluptate? Accusamus inventore quae reiciendis reprehenderit soluta tenetur veniam? Non, sapiente!
+    </div>
+    <div>
+        <div></div>
+    </div>
 </main>
 <footer class="Footer">
-    <p class="Footer-text">© Made by Danny Eeraerts and Quinten Roos</p>
 </footer>
+
 <script src="js/index.js"></script>
 </body>
 </html>
