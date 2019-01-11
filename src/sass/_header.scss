@@ -1,0 +1,44 @@
+
+$link-color: white;
+$link-hover-bg-color: white;
+$link-hover-color: rgb(18, 48, 144);
+
+.Header{
+  background: rgba(18, 48, 144);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-link{
+    text-decoration: none;
+    color: $link-color;
+  }
+  &-left{
+    flex-basis: 30%;
+  }
+  &-left img{
+    margin-left: 5%;
+    padding: 10px 0px;
+  }
+  &-middle{
+    flex-basis: 30%;
+    text-align: center;
+  }
+  &-middle a{
+    font-size: 2em;
+  }
+  &-right{
+    flex-basis: 30%;
+    text-align: right;
+  }
+  &-right a{
+    padding:0 0.5rem;
+    margin-right: 1.25rem;
+    font-size: 1.2em;
+  }
+  &-middle a:hover,&-right a:hover{
+    color: $link-hover-color;
+    background-color: $link-hover-bg-color;
+    padding: 0.5rem 0.5rem;
+  }
+}
