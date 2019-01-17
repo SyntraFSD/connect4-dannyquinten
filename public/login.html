@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The HTML5 Herald</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css?v=1.0">
@@ -40,18 +40,18 @@
   </nav>
 </header>
 <main>
-  <div class="Login">
-  <form action="" method="">
+  <div class="Login form-container">
+  <form class="form">
     <h1>Login:</h1>
-  <label for="email">E-mail:</label><input id="email" type="email" placeholder="Enter e-mail">
-  <label for="password">Password:</label><input id="password" type="password" placeholder="Enter password">
-  <button>Login</button>
+  <label for="Login-email">E-mail:</label><input id="Login-email" type="email" placeholder="Enter e-mail">
+  <label for="Login-password">Password:</label><input id="Login-password" type="password" placeholder="Enter password">
+  <button type="submit">Login</button>
   </form>
     <div class="clear"></div>
-    <p>Not an account? <a id="goToRegister" href="#">Register</a></p>
+    <p>Not an account? <a id="goToRegister">Register</a></p>
   </div>
-  <div class="Register hide">
-  <form action="" method="">
+  <div class="Register form-container hide">
+  <form class="form">
     <h1>Register:</h1>
     <label for="name">Name:</label><input id="name" type="text" placeholder="Enter name">
     <label for="email">E-mail:</label><input id="email" type="email" placeholder="Enter e-mail">
@@ -60,10 +60,10 @@
     <button>Create Account</button>
   </form>
     <div class="clear"></div>
-    <p>Already an account? <a id="goToLogin" href="#">Login</a></p>
+    <p>Already an account? <a id="goToLogin">Login</a></p>
     </div>
 </main>
-<script src="../src/js/form.js"></script>
+<script src="js/form.js"></script>
 </body>
 
 </html>

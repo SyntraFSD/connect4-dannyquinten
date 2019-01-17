@@ -1,15 +1,21 @@
 const goToLogin = document.querySelector('#goToLogin');
 const goToRegister = document.querySelector('#goToRegister');
-const login = document.querySelector('.Login');
-const register = document.querySelector('.Register');
-function showRegisterDiv() {
-  login.classList.add('hide');
-  register.classList.remove('hide');
+const loginForm = document.querySelector('.Login');
+const registerForm = document.querySelector('.Register');
+
+function switchForm(fromForm, toFrom) {
+  fromForm.classList.add('hide');
+  toFrom.classList.remove('hide');
 }
-function showLoginDiv() {
-  register.classList.add('hide');
-  login.classList.remove('hide');
+function showRegisterForm(event) {
+  event.preventDefault();
+  switchForm(loginForm, registerForm);
 }
 
-goToRegister.addEventListener('click', showRegisterDiv);
-goToLogin.addEventListener('click', showLoginDiv);
+function showLoginForm(event) {
+  event.preventDefault();
+  switchForm(registerForm, loginForm);
+}
+
+goToRegister.addEventListener('click', showRegisterForm);
+goToLogin.addEventListener('click', showLoginForm);

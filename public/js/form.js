@@ -1,18 +1,23 @@
 var goToLogin = document.querySelector('#goToLogin');
 var goToRegister = document.querySelector('#goToRegister');
-var login = document.querySelector('.Login');
-var register = document.querySelector('.Register');
+var loginForm = document.querySelector('.Login');
+var registerForm = document.querySelector('.Register');
 
-function showRegisterDiv() {
-  login.classList.add('hide');
-  register.classList.remove('hide');
+function switchForm(fromForm, toFrom) {
+  fromForm.classList.add('hide');
+  toFrom.classList.remove('hide');
 }
 
-function showLoginDiv() {
-  register.classList.add('hide');
-  login.classList.remove('hide');
+function showRegisterForm(event) {
+  event.preventDefault();
+  switchForm(loginForm, registerForm);
 }
 
-goToRegister.addEventListener('click', showRegisterDiv);
-goToLogin.addEventListener('click', showLoginDiv);
+function showLoginForm(event) {
+  event.preventDefault();
+  switchForm(registerForm, loginForm);
+}
+
+goToRegister.addEventListener('click', showRegisterForm);
+goToLogin.addEventListener('click', showLoginForm);
 //# sourceMappingURL=form.js.map
