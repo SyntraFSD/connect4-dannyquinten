@@ -18,6 +18,6 @@ function showLoginForm(event) {
   switchForm(registerForm, loginForm);
 }
 
-goToRegister.addEventListener('click', showRegisterForm);
+goToRegister.addEventListener(type, showRegisterForm);
 goToLogin.addEventListener('click', showLoginForm);
 //# sourceMappingURL=form.js.map
