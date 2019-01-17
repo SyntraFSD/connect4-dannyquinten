@@ -1,0 +1,53 @@
+.form-container{
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $header-dropdown-color;
+  box-sizing: border-box;
+  padding: 2rem 3rem 3rem 3rem;
+
+  label,input{
+    display: block;
+  }
+  label{
+    margin-bottom: 0.6rem;
+  }
+  input{
+    padding: 0.45rem;
+    margin-bottom: 1rem;
+    width: 20rem;
+    background-color: snow;
+  }
+  button{
+    margin-top: .8rem;
+    padding: 0.5rem;
+    float: right;
+    background-color: rgba(0,0,0,0);
+    border: 0.5px solid snow;
+  }
+  button:hover{
+    background-color: snow;
+    color: $header-dropdown-color;
+    cursor: pointer;
+  }
+  p{
+    float: right;
+    padding: 0.5rem 0;
+    a{
+      text-decoration: none;
+      color: $form-link-color;
+      padding: 0.3rem;
+
+    }
+    a:hover{
+      color: snow;
+      background-color: $form-link-color;
+      cursor: pointer;
+    }
+  }
+
+}
+.hide{
+  display: none;
+}
