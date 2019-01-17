@@ -15,8 +15,12 @@ function login(event) {
 
 goToRegister.addEventListener('click', switchForm);
 goToLogin.addEventListener('click', switchForm);
+<<<<<<< HEAD
 loginForm.addEventListener('submit', function (event) {
   event.preventDefault();
   console.log(event);
 });
 //# sourceMappingURL=form.js.map
+=======
+//# sourceMappingURL=login.js.map
+>>>>>>> cd96bcd1fedce63549baa31185b960a92b9ace0d
