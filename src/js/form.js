@@ -3,16 +3,14 @@ const goToRegister = document.querySelector('#goToRegister');
 const loginForm = document.querySelector('.Login');
 const registerForm = document.querySelector('.Register');
 
-function switchForm(fromForm, toFrom) {
-  fromForm.classList.add('hide');
-  toFrom.classList.remove('hide');
-}
-function showRegisterForm(event) {
+
+function switchForm(event) {
   event.preventDefault();
-  switchForm(loginForm, registerForm);
+  loginForm.classList.toggle('hide');
+  registerForm.classList.toggle('hide');
 }
 
-function showLoginForm(event) {
+function login(event){
   event.preventDefault();
   const inputField = loginForm.querySelectorAll(selectors:'input');
   const postdata = {};
@@ -41,3 +39,19 @@ function login(event){
 goToRegister.addEventListener(type: 'click',showRegisterForm);
 goToLogin.addEventListener(type: 'click', showLoginForm);
 loginForm.addEventListener(type: 'submit', goToLogin);
+}
+
+function register(event){
+  event.preventDefault();
+  const formData=getformData(registerForm);
+  const request = new XMLHttpRequest();
+}
+
+goToRegister.addEventListener('click', switchForm);
+goToLogin.addEventListener('click', switchForm);
+loginForm.addEventListener('submit',function(event){
+  event.preventDefault();
+  console.log(event);
+  registerForm.addEventListener(type:'submit',register);
+});
+

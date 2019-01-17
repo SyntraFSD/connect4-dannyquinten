@@ -1,32 +1,6 @@
 @import "normalize";
-
-$break-small: 480px;
-$break-large: 1200px;
-$link-color: #d4d9e0;
-$header-color: #357c80;
-$header-dropdown-color: #3fa4a8;
-$font: sans-serif;
-
-$form-link-color: #dbb800;
-
-$footer-color: #3f9499;
-$footer-height: 5rem;
-
-html {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: $font;
-  position: relative;
-  min-height: 100%;
-  padding-bottom: $footer-height;
-  box-sizing: border-box;
-}
-.clear{
-  clear: both;
-}
+@import "variables";
+@import "main";
 @import "header";
 @import "slider";
 @import "login";
