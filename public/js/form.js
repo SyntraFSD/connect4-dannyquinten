@@ -11,4 +11,4 @@ function switchForm(event) {
 
 goToRegister.addEventListener('click', switchForm);
 goToLogin.addEventListener('click', switchForm);
-//# sourceMappingURL=form.js.map
+//# sourceMappingURL=login.js.map
