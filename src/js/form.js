@@ -3,19 +3,11 @@ const goToRegister = document.querySelector('#goToRegister');
 const loginForm = document.querySelector('.Login');
 const registerForm = document.querySelector('.Register');
 
-function switchForm(fromForm, toFrom) {
-  fromForm.classList.add('hide');
-  toFrom.classList.remove('hide');
-}
-function showRegisterForm(event) {
+function switchForm(event) {
   event.preventDefault();
-  switchForm(loginForm, registerForm);
+  loginForm.classList.toggle('hide');
+  registerForm.classList.toggle('hide');
 }
 
-function showLoginForm(event) {
-  event.preventDefault();
-  switchForm(registerForm, loginForm);
-}
-
-goToRegister.addEventListener('click', showRegisterForm);
-goToLogin.addEventListener('click', showLoginForm);
+goToRegister.addEventListener('click', switchForm);
+goToLogin.addEventListener('click', switchForm);
