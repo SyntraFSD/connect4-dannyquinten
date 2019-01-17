@@ -4,4 +4,15 @@
   height: $footer-height;
   position: absolute;
   bottom: 0;
+  &-column{
+    width: 30%;
+    margin-left: 2.5%;
+    height: auto;
+    float: left;
+    padding: 0.35rem 0.8rem;
+    box-sizing: border-box;
+    &-text{
+      color: snow;
+    }
+  }
 }

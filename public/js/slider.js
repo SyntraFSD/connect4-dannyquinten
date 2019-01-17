@@ -1,4 +1,10 @@
 var newSlider = document.querySelector('.super-slider');
+/**
+ * @param ssSlide {Element}
+ * @param bullets {Element}
+ * @param width {number}
+ * @param index {number}
+ */
 
 function slide(ssSlide, bullets, width, index) {
   // make the image slide:
@@ -18,6 +24,12 @@ function slide(ssSlide, bullets, width, index) {
     }
   }
 }
+/**
+ * @param imgElement {Element}
+ * @param newWidth {number}
+ * @returns {Element}
+ */
+
 
 function resizeImg(imgElement, containerWidth) {
   // set imgElement.syle.width and -height
@@ -28,6 +40,12 @@ function resizeImg(imgElement, containerWidth) {
   imgElement.style.width = containerWidth + 'px';
   imgElement.style.height = containerWidth * originalHeight / originalWidth + 'px';
 }
+/**
+ * @param element {Element}
+ * @param containerWidth {number}
+ * @returns {NodeListOf<Element>}
+ */
+
 
 function resizeImages(element, containerWidth) {
   // resizeImg for all images
@@ -43,8 +61,21 @@ function resizeImages(element, containerWidth) {
 
   return images;
 }
+/**
+ * @param element {Element}
+ * @param images {NodeListOf<Element>}
+ * @returns {Element}
+ */
+
 
 function makeSsSlide(element, images) {
+  // create ssSlide (see html document for correct structure)
+  // add classes and index
+  // append all images
+  // return ssSlide
+  // document.createElement('div')``
+  // add class add data-index
+  // loop images >append child
   var ssSlide = document.createElement("div");
   ssSlide.classList.add('ss-slide');
   ssSlide.dataset.index = '0';
@@ -58,15 +89,37 @@ function makeSsSlide(element, images) {
   ssSlide.style.width = element.clientWidth * images.length + 'px';
   return ssSlide;
 }
+/**
+ * @param leftRight {string}
+ * @returns {Element}
+ */
+
 
 function makeArrow(leftRight) {
   var arrow = document.createElement("div");
   arrow.classList.add('ss-arrow', 'ss-' + leftRight);
-  arrow.innerHTML = '<i class = "fas fa-angle-' + leftRight + ' fa-5x"> </i>';
-  return arrow;
+  arrow.innerHTML = '<i class = "fas fa-angle-' + leftRight + ' fa-5x"> </i>'; //const i = document.createElement('i');
+  //i.classlist.add ('fa', 'fa-angle-left', 'fa-5x');
+  //arrow.appendChild(i);
+
+  return arrow; // make new arrow (left or right)
+  // add classes and font-awesome icon
+  // see html
+  // return the arrow
+  //const arrow = document.createElement(div
+  //return)
 }
+/**
+ * @param count {number}
+ * @returns {Element}
+ */
+
 
 function makeBullets(count) {
+  // make .ss-bullets
+  // fill with count * .ss-bullet
+  // see html
+  // return bullets
   var bulletContainer = document.createElement('div');
   bulletContainer.classList.add('ss-bullets');
 
@@ -90,6 +143,10 @@ function makeBullets(count) {
 
 
 function init(element) {
+  // remove loading class from element
+  // resize images
+  // append ssSlide, left and right arrow and bullets
+  // add event listeners
   element.classList.remove('loading');
   var containerWidth = element.clientWidth;
   var images = resizeImages(element, containerWidth);

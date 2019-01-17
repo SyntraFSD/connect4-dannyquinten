@@ -7,6 +7,8 @@ $header-color: #357c80;
 $header-dropdown-color: #3fa4a8;
 $font: sans-serif;
 
+$form-link-color: #dbb800;
+
 $footer-color: #3f9499;
 $footer-height: 5rem;
 
@@ -22,8 +24,12 @@ body {
   padding-bottom: $footer-height;
   box-sizing: border-box;
 }
-
+.clear{
+  clear: both;
+}
 @import "header";
+@import "slider";
+@import "login";
 @import "footer";
 
 
