@@ -1,6 +1,7 @@
 var goToLogin = document.querySelector('#goToLogin');
 var goToRegister = document.querySelector('#goToRegister');
 var loginForm = document.querySelector('.Login');
+var loginAlert = document.querySelector('.Login-alert');
 var registerForm = document.querySelector('.Register');
 var apiDomain = 'http://connect4.pienter.space';
 
@@ -8,6 +9,15 @@ function switchForm(event) {
   event.preventDefault();
   loginForm.classList.toggle('hide');
   registerForm.classList.toggle('hide');
+}
+
+function hideLoginAlert() {
+  loginAlert.classList.add('hide');
+}
+
+function showLoginAlert(content) {
+  loginAlert.textContent = content;
+  loginAlert.classList.remove('hide');
 }
 
 function getFormData(form) {
@@ -24,15 +34,15 @@ function handleLoginRequest(event) {
   console.log(request);
 
   if (request.readyState === 4) {
-    //console.log(JSON.parse(request.responseText));
+    var response = JSON.parse(request.responseText); // console.log(JSON.parse(request.responseText));
+
     console.log(request.status);
 
     if (request.status >= 200 && request.status < 300) {
       console.log('success');
       console.log(request);
-    } else {
-      console.log('error');
-      console.log(request);
+    } else if (request.status === 401) {
+      showLoginAlert(response);
     }
   }
 }
@@ -78,4 +88,5 @@ goToRegister.addEventListener('click', switchForm);
 goToLogin.addEventListener('click', switchForm);
 loginForm.addEventListener('submit', login);
 registerForm.addEventListener('submit', register);
+loginForm.addEventListener('input', hideLoginAlert);
 //# sourceMappingURL=login.js.map
