@@ -1,12 +1,31 @@
 var goToLogin = document.querySelector('#goToLogin');
 var goToRegister = document.querySelector('#goToRegister');
 var loginForm = document.querySelector('.Login');
+var loginAlert = document.querySelector('.Login-alert');
 var registerForm = document.querySelector('.Register');
+var apiDomain = 'http://connect4.pienter.space';
 
 function switchForm(event) {
   event.preventDefault();
   loginForm.classList.toggle('hide');
   registerForm.classList.toggle('hide');
+}
+
+function hideLoginAlert() {
+  loginAlert.classList.add('hide');
+}
+
+function showLoginAlert(content) {
+  var success = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  if (success) {
+    loginAlert.classList.add('success');
+  } else {
+    loginAlert.classList.remove('success');
+  }
+
+  loginAlert.textContent = content;
+  loginAlert.classList.remove('hide');
 }
 
 function getFormData(form) {
@@ -20,28 +39,17 @@ function getFormData(form) {
 
 function handleLoginRequest(event) {
   var request = event.target;
+  console.log(request);
 
   if (request.readyState === 4) {
+    var response = JSON.parse(request.responseText); // console.log(JSON.parse(request.responseText));
+
     console.log(request.status);
 
     if (request.status >= 200 && request.status < 300) {
-      console.log('succes');
-    } else {
-      alert('How seg das nie just!');
-    }
-  }
-}
-
-function handleRegisterRequest(event) {
-  var request = event.target;
-
-  if (request.readyState === 4) {
-    console.log(request.status);
-
-    if (request.status >= 200 && request.status < 300) {
-      console.log('succes');
-    } else {
-      alert('How seg das nie just!');
+      showLoginAlert('Joepie je bent ingelogd', true);
+    } else if (request.status === 401) {
+      showLoginAlert(response.error);
     }
   }
 }
@@ -51,9 +59,26 @@ function login(event) {
   var formData = getFormData(loginForm);
   var request = new XMLHttpRequest();
   request.addEventListener('readystatechange', handleLoginRequest);
-  request.open('POST', 'http://connect4.pienter.space/api/auth/login');
+  request.open('POST', apiDomain + '/api/auth/login');
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify(formData));
+}
+
+function handleRegisterRequest(event) {
+  var request = event.target;
+  console.log(request);
+
+  if (request.readyState === 4) {
+    console.log(request.status);
+
+    if (request.status >= 200 && request.status < 300) {
+      console.log('success');
+      console.log(request);
+    } else {
+      console.log('error');
+      console.log(request);
+    }
+  }
 }
 
 function register(event) {
@@ -61,10 +86,8 @@ function register(event) {
   var formData = getFormData(registerForm);
   var request = new XMLHttpRequest();
   request.addEventListener('readystatechange', handleRegisterRequest);
-  request.open('POST', 'http://connect4.pienter.space/api/auth/register'); // welke methode en welke url naar server
-
-  request.setRequestHeader('Content-Type', 'application/json'); // data is in jason form hoe processen
-
+  request.open('POST', apiDomain + '/api/auth/register');
+  request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify(formData));
 }
 
@@ -72,4 +95,5 @@ goToRegister.addEventListener('click', switchForm);
 goToLogin.addEventListener('click', switchForm);
 loginForm.addEventListener('submit', login);
 registerForm.addEventListener('submit', register);
+loginForm.addEventListener('input', hideLoginAlert);
 //# sourceMappingURL=login.js.map

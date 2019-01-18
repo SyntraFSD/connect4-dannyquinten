@@ -22,9 +22,9 @@ const inputTitle = document.querySelector('#title');
 const inputBody = document.querySelector('#body');
 const output = document.querySelector('#output');
 
-function handleRequest(event){
+function handleRequest(event) {
   const request = event.target;
-  if(request.readyState === 4){
+  if(request.readyState === 4) {
     //console.log(JSON.parse(request.responseText));
     console.log(request.status);
     if(request.status >=200 && request.status < 300){
