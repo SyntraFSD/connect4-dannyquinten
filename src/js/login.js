@@ -13,7 +13,12 @@ function switchForm(event) {
 function hideLoginAlert() {
   loginAlert.classList.add('hide');
 }
-function showLoginAlert(content) {
+function showLoginAlert(content, success = false) {
+  if (success) {
+    loginAlert.classList.add('success');
+  } else {
+    loginAlert.classList.remove('success');
+  }
   loginAlert.textContent = content;
   loginAlert.classList.remove('hide');
 }
@@ -34,10 +39,9 @@ function handleLoginRequest(event) {
     // console.log(JSON.parse(request.responseText));
     console.log(request.status);
     if (request.status >= 200 && request.status < 300) {
-      console.log('success');
-      console.log(request);
+      showLoginAlert('Joepie je bent ingelogd', true);
     } else if (request.status === 401) {
-      showLoginAlert(response);
+      showLoginAlert(response.error);
     }
   }
 }

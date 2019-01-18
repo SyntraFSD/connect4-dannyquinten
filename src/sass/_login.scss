@@ -52,6 +52,10 @@
        border-radius: .3rem;
        color: white;
        padding: .5rem;
+      &.success{
+        background-color:green;
+        border: 2px solid darkgreen;
+      }
      }
     &-link{
       float: right;
