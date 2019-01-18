@@ -9,6 +9,14 @@ function switchForm(event) {
   registerForm.classList.toggle('hide');
 }
 
+function login(event) {
+  event.preventDefault();
+}
+
 goToRegister.addEventListener('click', switchForm);
 goToLogin.addEventListener('click', switchForm);
-//# sourceMappingURL=login.js.map
+loginForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  console.log(event);
+});
+//# sourceMappingURL=form.js.map
