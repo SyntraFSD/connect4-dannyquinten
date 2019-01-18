@@ -10,9 +10,11 @@ function switchForm(event) {
   loginForm.classList.toggle('hide');
   registerForm.classList.toggle('hide');
 }
+
 function hideLoginAlert() {
   loginAlert.classList.add('hide');
 }
+
 function showLoginAlert(content, success = false) {
   if (success) {
     loginAlert.classList.add('success');
@@ -22,6 +24,7 @@ function showLoginAlert(content, success = false) {
   loginAlert.textContent = content;
   loginAlert.classList.remove('hide');
 }
+
 function getFormData(form) {
   const inputFields = form.querySelectorAll('input');
   const formData = {};
@@ -40,6 +43,16 @@ function handleLoginRequest(event) {
     console.log(request.status);
     if (request.status >= 200 && request.status < 300) {
       showLoginAlert('Joepie je bent ingelogd', true);
+      /*
+      1 - Check de response
+      2 - Sla de token op in localStorage
+      3 - Redirect naar closed.html
+       */
+      if (response.access_token) {
+        window.localStorage.setItem('token', response.access_token);
+        // window.history.pushState({}, 'Closed', 'closed.html');
+        window.location = 'closed.html';d
+      }
     } else if (request.status === 401) {
       showLoginAlert(response.error);
     }
