@@ -83,21 +83,21 @@
   content: "";
   display: block;
   position: absolute;
-  top: -15vmin;
-  left: 1vmin;
-  width: 9vmin;
-  height: 9vmin;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
+  top: -20%;
+  left: 6%;
+  width: calc(90vw/7);
+  max-width: 90px;
+  height: calc(90vw/7);
+  max-height: 90px;
   border-radius: 50%;
 }
 
 #board[data-turn="red"] .col:before {
-  background: border-box no-repeat center/100% url("images/red_stone.png");
+  background: border-box no-repeat center/100% url("../content/img/red_stone.png");
 }
 
 #board[data-turn="yellow"] .col:before {
-  background: border-box no-repeat center/100% url("images/yellow_stone.png");
+  background: border-box no-repeat center/100% url("../content/img/yellow_stone.png");
 }
 
 #message-container{

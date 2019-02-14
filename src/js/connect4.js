@@ -28,6 +28,7 @@ function drawBoard() {
       rowElement.dataset.winner = 'false';
       colElement.appendChild(rowElement);
     });
+    connectBoard.dataset.turn = 'yellow';
     connectBoard.appendChild(colElement);
   });
 }
