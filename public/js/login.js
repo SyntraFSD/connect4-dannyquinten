@@ -57,8 +57,9 @@ function handleLoginRequest(event) {
       if (response.access_token) {
         window.localStorage.setItem('token', response.access_token); // window.history.pushState({}, 'Closed', 'closed.html');
 
-        window.location = 'closed.html';
-        d;
+        setTimeout(function () {
+          window.location = 'closed.html';
+        }, 5000);
       }
     } else if (request.status === 401) {
       showLoginAlert(response.error);

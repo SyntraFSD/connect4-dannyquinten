@@ -1,0 +1,111 @@
+.board{
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#board {
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  border: .2vmin solid #040035;
+  position: relative;
+  width: 90vw;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto;
+
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.row {
+  box-sizing: border-box;
+  width: calc(90vw/7);
+  max-width: 100px;
+  height: calc(90vw/7);
+  max-height: 100px;
+  position: relative;
+  border: .2vmin solid #040035;
+}
+
+.row:before {
+  content: "";
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: 6%;
+  bottom: 6%;
+  left: 6%;
+  right: 6%;
+  border-radius: 50%;
+  border: .3vmin solid #040035;
+}
+
+.row[data-color="empty"]:before {
+  background-color: lightblue;
+}
+
+.row[data-color="red"]:before {
+  background: border-box no-repeat center/100% url("../content/img/red_stone.png");
+  border:none;
+}
+
+.row[data-color="yellow"]:before {
+  background: border-box no-repeat center/100% url("../content/img/yellow_stone.png");
+  border:none;
+}
+
+.row[data-winner="true"]:before{
+  -webkit-animation: winner 1s infinite;
+  -o-animation: winner 1s infinite;
+  animation: winner 1s infinite;
+}
+
+@-webkit-keyframes winner {
+  0%   { border-color: #4e63a7; }
+  25% { border-color: #81aae6; }
+  50% { border-color: #b5d8ff; }
+  75% { border-color: #81aae6; }
+  100%   { border-color: #4e63a7; }
+}
+
+.col:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -15vmin;
+  left: 1vmin;
+  width: 9vmin;
+  height: 9vmin;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#board[data-turn="red"] .col:before {
+  background: border-box no-repeat center/100% url("images/red_stone.png");
+}
+
+#board[data-turn="yellow"] .col:before {
+  background: border-box no-repeat center/100% url("images/yellow_stone.png");
+}
+
+#message-container{
+  color: white;
+  position: absolute;
+  bottom: -3rem;
+  width: 100%;
+  font-size: 1.8rem;
+  text-align: center;
+  font-family: sans-serif;
+}
