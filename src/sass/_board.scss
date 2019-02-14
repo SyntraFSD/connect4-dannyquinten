@@ -49,6 +49,7 @@
   right: 6%;
   border-radius: 50%;
   border: .3vmin solid #040035;
+  box-shadow: inset 0 0 7px 3px #252f50, 0 0 3px 1px #252f50;
 }
 
 .row[data-color="empty"]:before {
@@ -57,12 +58,10 @@
 
 .row[data-color="red"]:before {
   background: border-box no-repeat center/100% url("../content/img/red_stone.png");
-  border:none;
 }
 
 .row[data-color="yellow"]:before {
   background: border-box no-repeat center/100% url("../content/img/yellow_stone.png");
-  border:none;
 }
 
 .row[data-winner="true"]:before{
