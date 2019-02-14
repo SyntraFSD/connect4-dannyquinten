@@ -11,10 +11,10 @@
 }
 #board {
   box-sizing: border-box;
-  background-color: white;
+  background-color: cornflowerblue;
   display: flex;
-  border: .2vmin solid #040035;
-  position: relative;
+  border: 1px solid #040035;
+  border-radius: .50rem;
   width: 90vw;
   max-width: 700px;
   height: auto;
@@ -35,7 +35,6 @@
   height: calc(90vw/7);
   max-height: 100px;
   position: relative;
-  border: .2vmin solid #040035;
 }
 
 .row:before {
@@ -53,7 +52,7 @@
 }
 
 .row[data-color="empty"]:before {
-  background-color: lightblue;
+  background-color: white;
 }
 
 .row[data-color="red"]:before {
@@ -82,7 +81,7 @@
   content: "";
   display: block;
   position: absolute;
-  top: -20%;
+  top: -18%;
   left: 6%;
   width: calc(90vw/7);
   max-width: 90px;
